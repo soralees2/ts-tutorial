@@ -27,6 +27,9 @@ class TodoList extends React.Component<Props, State>{
 
   onToggle = (id: number): void => { // id 매개변수(받아온값), void타입선언으로 반환값이 없다는걸 알 수 있음
     const { todoItems } = this.state;
+    console.log('todoItems');
+    console.log(todoItems);
+
     const index = todoItems.findIndex(todo => todo.id === id); // id로 인덱스 찾기
     const selectedItem = todoItems[index]; // 아이템 선택
     const nextItems = [...todoItems];
@@ -70,7 +73,8 @@ class TodoList extends React.Component<Props, State>{
           done: false
         })
       })
-    )
+      )
+      console.log(this.state.todoItems);
   }
 
   render(){
@@ -81,13 +85,26 @@ class TodoList extends React.Component<Props, State>{
       todo => (
         <TodoItem 
           key={todo.id}
+          done={todo.done}
+          onToggle={()=>onToggle(todo.id)}
+          onRemove={()=>onRemove(todo.id)}
+          text={todo.text}
         />
       )
     )
     return(
       <div>
-
+        <h1>Input</h1>
+        <form onSubmit={onSubmit}>
+          <input onChange={onChange} value={input}/>
+          <button type="submit">추가하기</button>
+        </form>
+        <ul>
+          {todoItemList}
+        </ul>
       </div>
     )
   }
 }
+
+export default TodoList;

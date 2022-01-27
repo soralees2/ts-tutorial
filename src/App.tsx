@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter, Profiles } from './components/index';
+import { Counter, Profiles, TodoList } from './components/index';
 // import Greetings from './Greetings';
 
 /* const App: React.FC = () => {
@@ -16,6 +16,7 @@ class App extends React.Component {
       <div>
         <Profiles name="소라짱" job="프엔개발자" />
         <Counter />
+        <TodoList />
       </div>
     );
   }

@@ -30,7 +30,7 @@ class Counter extends React.Component<Props, State> {
     const { counter } = this.state;
     return (
       <div>
-        <h1>카운터</h1>
+        <h1>Counter</h1>
         <h3>{ counter }</h3>
         <button type="button" onClick={ onIncrement }>+</button>
         <button type="button" onClick={ onDecrement }>-</button>

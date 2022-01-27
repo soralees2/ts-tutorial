@@ -20,11 +20,23 @@ class TodoItem extends React.Component<Props>{
               textDecoration: done ? 'line-through' : 'none',
             }}
           >{text}</b>
-          <span style={{marginLeft: '0.5rem'}} onClick={onRemove}>[지우기]</span>
+          <span style={{marginLeft: '0.5rem', cursor: 'pointer'}} onClick={onRemove}>[지우기]</span>
         </li>
       </div>
     )
   }
 }
+
+/* const TodoItem: React.SFC<Props> = ({ text, done, onToggle, onRemove }) => (
+  <li>
+      <b 
+        onClick={onToggle}
+        style={{
+          textDecoration: done ? 'line-through' : 'none',
+        }}
+      >{text}</b>
+      <span style={{marginLeft: '0.5rem'}} onClick={onRemove}>[지우기]</span>
+    </li>
+); */
 
 export default TodoItem;

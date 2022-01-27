@@ -25,7 +25,7 @@ interface Props{
 
 const Profile = ({ name, job }: Props) => (
   <div>
-    <h1>프로필</h1>
+    <h1>Info</h1>
     <div>
       <b>이름 : </b>{ name }
     </div>
